@@ -760,6 +760,10 @@ select{
   margin-top: 0.25rem;
 }
 
+.mt-1\.5{
+  margin-top: 0.375rem;
+}
+
 .mt-16{
   margin-top: 4rem;
 }
@@ -776,12 +780,20 @@ select{
   margin-top: 2rem;
 }
 
+.mt-3{
+  margin-top: 0.75rem;
+}
+
 .block{
   display: block;
 }
 
 .flex{
   display: flex;
+}
+
+.inline-flex{
+  display: inline-flex;
 }
 
 .grid{
@@ -798,6 +810,10 @@ select{
 
 .h-24{
   height: 6rem;
+}
+
+.h-4{
+  height: 1rem;
 }
 
 .h-5{
@@ -822,6 +838,14 @@ select{
 
 .h-screen{
   height: 100vh;
+}
+
+.h-\[350px\]{
+  height: 350px;
+}
+
+.w-4{
+  width: 1rem;
 }
 
 .w-5{
@@ -864,6 +888,10 @@ select{
   max-width: 36rem;
 }
 
+.max-w-\[45ch\]{
+  max-width: 45ch;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -879,6 +907,10 @@ select{
 
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.flex-col{
+  flex-direction: column;
 }
 
 .flex-wrap{
@@ -899,6 +931,14 @@ select{
 
 .justify-between{
   justify-content: space-between;
+}
+
+.gap-1{
+  gap: 0.25rem;
+}
+
+.gap-1\.5{
+  gap: 0.375rem;
 }
 
 .gap-4{
@@ -933,6 +973,10 @@ select{
 
 .rounded-full{
   border-radius: 9999px;
+}
+
+.rounded-lg{
+  border-radius: 0.5rem;
 }
 
 .rounded-md{
@@ -986,6 +1030,16 @@ select{
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.bg-gray-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
 .bg-transparent{
   background-color: transparent;
 }
@@ -998,11 +1052,6 @@ select{
 .bg-gray-900{
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.bg-gray-700{
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r{
@@ -1112,6 +1161,11 @@ select{
   padding-bottom: 2rem;
 }
 
+.px-12{
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .pb-8{
   padding-bottom: 2rem;
 }
@@ -1164,6 +1218,11 @@ select{
 .text-xs\/relaxed{
   font-size: 0.75rem;
   line-height: 1.625;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold{
@@ -1325,6 +1384,15 @@ select{
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-indigo-700:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-transparent:hover{
+  background-color: transparent;
+}
+
 .hover\:text-gray-500\/75:hover{
   color: rgb(107 114 128 / 0.75);
 }
@@ -1333,8 +1401,18 @@ select{
   color: rgb(75 85 99 / 0.75);
 }
 
+.hover\:text-gray-700:hover{
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
 .hover\:text-gray-700\/75:hover{
   color: rgb(55 65 81 / 0.75);
+}
+
+.hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .before\:hover\:left-0:hover::before{
@@ -1345,6 +1423,34 @@ select{
 .before\:hover\:top-0:hover::before{
   content: var(--tw-content);
   top: 0px;
+}
+
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:ring:focus{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.active\:bg-blue-500:active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.active\:text-opacity-75:active{
+  --tw-text-opacity: 0.75;
+}
+
+.group:hover .group-hover\:underline{
+  text-decoration-line: underline;
+}
+
+.group:hover .group-hover\:underline-offset-4{
+  text-underline-offset: 4px;
 }
 
 @media (min-width: 640px){
@@ -1372,8 +1478,24 @@ select{
     height: 16rem;
   }
 
+  .sm\:h-\[450px\]{
+    height: 450px;
+  }
+
+  .sm\:w-auto{
+    width: auto;
+  }
+
+  .sm\:flex-row{
+    flex-direction: row;
+  }
+
   .sm\:items-center{
     align-items: center;
+  }
+
+  .sm\:justify-between{
+    justify-content: space-between;
   }
 
   .sm\:gap-4{
@@ -1388,6 +1510,15 @@ select{
   .sm\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:py-12{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .sm\:text-left{
+    text-align: left;
   }
 
   .sm\:text-3xl{
