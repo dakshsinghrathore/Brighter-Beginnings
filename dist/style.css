@@ -1468,10 +1468,6 @@ select{
     margin-top: 0px;
   }
 
-  .sm\:block{
-    display: block;
-  }
-
   .sm\:flex{
     display: flex;
   }
@@ -1587,6 +1583,11 @@ select{
     padding-right: 2.5rem;
   }
 
+  .md\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .md\:py-0{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -1595,21 +1596,6 @@ select{
   .md\:py-2{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  .md\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .md\:px-12{
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  .md\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   .md\:text-4xl{
@@ -1695,11 +1681,6 @@ select{
     gap: 8rem;
   }
 
-  .lg\:px-0{
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
   .lg\:px-16{
     padding-left: 4rem;
     padding-right: 4rem;
@@ -1713,11 +1694,6 @@ select{
   .lg\:py-12{
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
-
-  .lg\:px-12{
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 
   .lg\:text-left{
