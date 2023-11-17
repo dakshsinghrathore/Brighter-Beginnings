@@ -1,0 +1,10 @@
+.topic-content {
+    max-height: 0; /* Set an initial value */
+    overflow: hidden;
+    transition: max-height 0.6s;
+}
+
+.topic-content.afterClick {
+    max-height: 500px; /* Set the desired height value for the transition */
+    border-radius: 0px 0px 0.75rem 0.75rem;
+}
