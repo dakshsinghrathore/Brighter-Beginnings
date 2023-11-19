@@ -70,12 +70,12 @@
 
               <div class="flex items-center gap-4">
                 <div class="sm:flex sm:gap-4">
-                  <a
+                  <button id="login"
                     class="relative -top-1 -left-1 rounded-2xl border bg-transparent py-2 px-5 font-medium text-blue transition-all before:absolute before:top-1 before:left-1 before:-z-[1] before:h-full border-blue-600 before:w-full before:border-0 before:transition-all hover:bg-blue-600 before:content-[''] hover:top-0 hover:left-0 before:hover:top-0 before:hover:left-0"
                     href="login.html"
                   >
                     Login
-                  </a>
+                  </button>
 
                   <div class="hidden sm:flex">
                     <a
@@ -406,4 +406,53 @@
       </div>
     </footer>
   </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCfnpTXcMkA3_gwaNaZBaqmf3uDXp5vGdQ",
+        authDomain: "brighter-beginnings.firebaseapp.com",
+        projectId: "brighter-beginnings",
+        storageBucket: "brighter-beginnings.appspot.com",
+        messagingSenderId: "395044809359",
+        appId: "1:395044809359:web:72485b8354a581c9b0defa"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider(app);
+
+    document.getElementById('login').addEventListener('click', (e) => {
+        signInWithRedirect(auth, provider);
+    });
+
+    getRedirectResult(auth)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access Google APIs.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+
+            // The signed-in user info.
+            const user = result.user;
+
+            // Redirect to a specific HTML page after successful login
+            window.location.href = 'dist/getstarted.html';
+        })
+        .catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+        });
+</script>
+
 </html>
