@@ -1012,6 +1012,18 @@ select{
   width: 100vw;
 }
 
+.w-7{
+  width: 1.75rem;
+}
+
+.w-8{
+  width: 2rem;
+}
+
+.w-9{
+  width: 2.25rem;
+}
+
 .max-w-3xl{
   max-width: 48rem;
 }
@@ -1214,6 +1226,11 @@ select{
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
+.border-red-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity));
+}
+
 .border-transparent{
   border-color: transparent;
 }
@@ -1268,6 +1285,11 @@ select{
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
+.bg-slate-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
 .bg-transparent{
   background-color: transparent;
 }
@@ -1275,6 +1297,11 @@ select{
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r{
@@ -1657,16 +1684,16 @@ select{
   transition-duration: 150ms;
 }
 
+.duration-100{
+  transition-duration: 100ms;
+}
+
 .duration-1000{
   transition-duration: 1000ms;
 }
 
 .duration-300{
   transition-duration: 300ms;
-}
-
-.duration-100{
-  transition-duration: 100ms;
 }
 
 .ease-in-out{
@@ -1842,11 +1869,6 @@ select{
 @media (min-width: 640px){
   .sm\:col-span-3{
     grid-column: span 3 / span 3;
-  }
-
-  .sm\:mx-0{
-    margin-left: 0px;
-    margin-right: 0px;
   }
 
   .sm\:mt-0{
@@ -2317,10 +2339,6 @@ select{
 
   .lg\:justify-start{
     justify-content: flex-start;
-  }
-
-  .lg\:justify-center{
-    justify-content: center;
   }
 
   .lg\:gap-0{
