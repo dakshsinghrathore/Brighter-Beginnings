@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BrighterBeginnings</title>
-    <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/dist/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body >
+  <body>
     <section
       class="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white font-grotesk overflow-hidden"
     >
@@ -69,9 +69,10 @@
                 </ul>
               </nav>
 
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1 sm:gap-4">
                 <div class="sm:flex sm:gap-4">
-                  <button id="login"
+                  <button
+                    id="login"
                     class="relative -top-1 -left-1 rounded-2xl border bg-transparent py-2 px-5 font-medium text-blue transition-all before:absolute before:top-1 before:left-1 before:-z-[1] before:h-full border-blue-600 before:w-full before:border-0 before:transition-all hover:bg-blue-600 before:content-[''] hover:top-0 hover:left-0 before:hover:top-0 before:hover:left-0"
                     href="login.html"
                   >
@@ -90,11 +91,12 @@
 
                 <div class="block md:hidden">
                   <button
-                    class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                  id="headerButton"
+                    class="rounded p-2 text-white transition hover:text-blue-600 ease-in duration-75 -translate-y-1"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
+                      class="h-5 w-5 scale-125"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -113,23 +115,57 @@
           </div>
         </div>
       </header>
-
       <div
-        class="w-screen px-4 py-32 lg:flex lg:h-screen lg:items-center "
+        id="headerDropList"
+        class="w-1/3 sm:w-64 min-w-min h-36 right-8 rounded-xl rounded-tr-none fixed top-14 z-50 border bg-transparent backdrop-blur-sm md:hidden"
       >
+        <ul class="h-full flex-col justify-evenly">
+          <li
+            class="h-1/3 border-0 border-b border-b-gray-700 text-center text-xl"
+          >
+            <a
+              class="text-gray-500 transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
+              href="about.html"
+            >
+              About
+            </a>
+          </li>
+          <li
+            class="h-1/3 border-0 border-b border-b-gray-700 text-center text-xl"
+          >
+            <a
+              class="text-gray-500 transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
+              href="services.html"
+            >
+              Services
+            </a>
+          </li>
+          <li class="h-1/3 text-center text-xl">
+            <a
+              class="text-gray-500 transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
+              href="blog.html"
+            >
+              Blog
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-screen px-4 py-32 lg:flex lg:h-screen lg:items-center">
         <div
-          class="mx-auto max-w-3xl text-center border border-transparent shadow-2xl bg-gradient-to-r from-black via-gray-900 to-gray-700 rounded-3xl md:px-16 py-12 "
+          class="mx-auto max-w-3xl text-center border border-transparent shadow-2xl bg-gradient-to-r from-black via-gray-900 to-gray-700 rounded-3xl md:px-16 py-12"
         >
           <h1
-            class="w-fit m-auto bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-2xl font-extrabold text-transparent sm:text-5xl "
+            class="w-fit m-auto bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-2xl font-extrabold text-transparent sm:text-5xl"
           >
             BrighterBeginnings ✨
-
           </h1>
 
-          <p class="mx-auto w-2/3 mt-3 max-w-xl sm:text-xl/relaxed ">
-            
-            Unlock the world of coding with our free three-module course, designed for absolute beginners. Embrace an interactive learning experience and join a supportive community, making coding accessible to all. Your journey to a brighter future starts here.
+          <p class="mx-auto w-2/3 mt-3 max-w-xl sm:text-xl/relaxed">
+            Unlock the world of coding with our free three-module course,
+            designed for absolute beginners. Embrace an interactive learning
+            experience and join a supportive community, making coding accessible
+            to all. Your journey to a brighter future starts here.
           </p>
 
           <div class="mt-8 flex flex-wrap justify-center gap-4">
@@ -151,7 +187,7 @@
       </div>
     </section>
 
-    <footer class="bg-gray-300 ">
+    <footer class="bg-gray-300">
       <div class="w-screen px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-md">
           <strong
@@ -183,7 +219,10 @@
         <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           <div class="mx-auto max-w-sm lg:max-w-none">
             <p class="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
-              Connect with us on social media, share Brighter Beginnings to empower learners, contribute to our open-source project shaping coding education, and contact us at dakshrathore1729@gmail.com for any questions or suggestions.
+              Connect with us on social media, share Brighter Beginnings to
+              empower learners, contribute to our open-source project shaping
+              coding education, and contact us at dakshrathore1729@gmail.com for
+              any questions or suggestions.
             </p>
 
             <div class="mt-6 flex justify-center gap-4 lg:justify-start">
@@ -411,16 +450,21 @@
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
-    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithRedirect,
+      getRedirectResult,
+    } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
     // Your web app's Firebase configuration
     const firebaseConfig = {
-        apiKey: "AIzaSyCfnpTXcMkA3_gwaNaZBaqmf3uDXp5vGdQ",
-        authDomain: "brighter-beginnings.firebaseapp.com",
-        projectId: "brighter-beginnings",
-        storageBucket: "brighter-beginnings.appspot.com",
-        messagingSenderId: "395044809359",
-        appId: "1:395044809359:web:72485b8354a581c9b0defa"
+      apiKey: "AIzaSyCfnpTXcMkA3_gwaNaZBaqmf3uDXp5vGdQ",
+      authDomain: "brighter-beginnings.firebaseapp.com",
+      projectId: "brighter-beginnings",
+      storageBucket: "brighter-beginnings.appspot.com",
+      messagingSenderId: "395044809359",
+      appId: "1:395044809359:web:72485b8354a581c9b0defa",
     };
 
     // Initialize Firebase
@@ -429,31 +473,31 @@
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider(app);
 
-    document.getElementById('login').addEventListener('click', (e) => {
-        signInWithRedirect(auth, provider);
+    document.getElementById("login").addEventListener("click", (e) => {
+      signInWithRedirect(auth, provider);
     });
 
     getRedirectResult(auth)
-        .then((result) => {
-            // This gives you a Google Access Token. You can use it to access Google APIs.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
 
-            // The signed-in user info.
-            const user = result.user;
+        // The signed-in user info.
+        const user = result.user;
 
-            // Redirect to a specific HTML page after successful login
-            window.location.href = 'getstarted.html';
-        })
-        .catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-        });
-</script>
-
+        // Redirect to a specific HTML page after successful login
+        window.location.href = "getstarted.html";
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
+  </script>
+  <script src="script.js"></script>
 </html>
