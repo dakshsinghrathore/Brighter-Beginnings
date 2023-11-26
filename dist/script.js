@@ -1,17 +1,4 @@
-// header drop list toggle
 
-let headerButton = document.querySelector("#headerButton");
-let headerList = document.querySelector("#headerDropList");
-
-headerList.style.display = "none";
-
-headerButton.addEventListener("click", function () {
-  if (headerList.style.display === "none") {
-    headerList.style.display = "block";
-  } else {
-    headerList.style.display = "none";
-  }
-});
 
 // m2 content toggle
 document.querySelector("#content").addEventListener("click", function (e) {
