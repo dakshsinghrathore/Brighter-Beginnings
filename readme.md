@@ -36,7 +36,6 @@ npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch
 # Team Members
 > Team Name: Bencode
 
-We developed this project in [Cornucodia](https://cornucodia.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Submissions+open) Hackathon
 
 | Name                   | Role    | GitHub Profile                                 | Photo                                               |
 |------------------------|---------|--------------------------------------------|-----------------------------------------------------|
