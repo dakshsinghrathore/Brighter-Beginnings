@@ -16,6 +16,13 @@ Unlock the world of coding with our free three-module course, designed for absol
 - [JavaScript](https://tc39.es/) - JS is an Open source runtime environment, built on the Chrome browser's V8 engine
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup
 
+## Demo 📽️
+
+
+https://github.com/dakshsinghrathore/Brighter-Beginnings/assets/115932772/6ba9a11c-e174-4b25-8707-a9c3cba1b3e8
+
+
+
 
 ## Getting Started: Running the Project Locally
 
