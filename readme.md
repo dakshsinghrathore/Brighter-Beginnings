@@ -16,10 +16,16 @@ Unlock the world of coding with our free three-module course, designed for absol
 - [JavaScript](https://tc39.es/) - JS is an Open source runtime environment, built on the Chrome browser's V8 engine
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup
 
-## Demo 📽️
+## 🚀 Quick start
 
+Contributions are welcome! If you have any ideas, suggestions, or bug fixes, please open an [issue](https://github.com/dakshsinghrathore/Brighter-Beginnings/issues/new) or submit a pull request. Make sure to follow the project's code of conduct.
 
-https://github.com/dakshsinghrathore/Brighter-Beginnings/assets/115932772/6ba9a11c-e174-4b25-8707-a9c3cba1b3e8
+> **Note**: If you are new to open source contributions, you can refer to [this](https://opensource.guide/how-to-contribute/) guide by GitHub.
+
+> **Warning**: Please do not spam the repository with unnecessary PRs. Make sure to follow the project's [code of conduct](/CODE_OF_CONDUCT.md).
+
+- Go through the [CONTRIBUTING.md](https://github.com/dakshsinghrathore/Brighter-Beginnings/blob/main/Contributing.md) file, where all the guidelines have been mentioned that will guide you to make your contribution.
+- Do check out the [project issue tracker](https://github.com/dakshsinghrathore/Brighter-Beginnings/issues) section.
 
 
 
@@ -40,14 +46,12 @@ npm install -D @tailwindcss/forms
 npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch
 ```
 
-# Team Members
-> Team Name: Bencode
-
-
-| Name                   | Role    | GitHub Profile                                 | Photo                                               |
-|------------------------|---------|--------------------------------------------|-----------------------------------------------------|
-| Daksh Singh Rathore    | Frontend| [dakshsinghrathore](https://github.com/dakshsinghrathore)    | <img src="https://github.com/dakshsinghrathore.png" height="100">    |
-| Siwam Singh          | Frontend| [siwamsingh](https://github.com/siwamsingh)            | <img src="https://github.com/siwamsingh.png" height="100">              |
+<div align=center>
+  <h2>This Project is the part of</h2>
+  <!-- <img alt="hacktoberfest" src="https://raw.githubusercontent.com/GirlScriptSummerOfCode/MentorshipProgram/master/GSsoc%20Type%20Logo%20Black.png#gh-light-mode-only" width=87%> -->
+  <!-- <img alt="hacktoberfest" src="https://github.com/dakshsinghrathore/ISRO-web/assets/115932772/7bf7edc1-eeee-4e55-82fe-5f756ef7d11c#gh-dark-mode-only"/> -->
+  <img alt="SWOC23" src="https://github.com/dakshsinghrathore/Brighter-Beginnings/assets/115932772/708c764d-05a7-4e33-bf89-114306f35d8c"/>
+</div>
              
 
 
