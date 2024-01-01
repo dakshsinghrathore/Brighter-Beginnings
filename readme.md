@@ -43,7 +43,7 @@ npm install -D @tailwindcss/forms
 ```
 
 ```bash
-npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch
+npx tailwindcss -i ./src/input.css -o ./src/assets/css/style.css --watch
 ```
 
 <div align=center>
