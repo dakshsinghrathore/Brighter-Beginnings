@@ -779,12 +779,16 @@ select{
   right: 2rem;
 }
 
+.right-\[3\%\]{
+  right: 3%;
+}
+
 .top-1\/2{
   top: 50%;
 }
 
-.top-14{
-  top: 3.5rem;
+.top-\[13\%\]{
+  top: 13%;
 }
 
 .z-20{
@@ -938,6 +942,10 @@ select{
 
 .h-96{
   height: 24rem;
+}
+
+.h-\[0\]{
+  height: 0;
 }
 
 .h-\[350px\]{
