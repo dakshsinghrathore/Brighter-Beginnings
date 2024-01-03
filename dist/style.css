@@ -10,6 +10,7 @@
 */
 body {
   overflow-x: hidden;
+  
 }
 
 *,
@@ -1410,7 +1411,7 @@ select {
 }
 
 .bg-white {
-  --tw-bg-opacity: 1;
+  --tw-bg-opacity:0;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
