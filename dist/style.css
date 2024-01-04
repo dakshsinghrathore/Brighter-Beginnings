@@ -1970,12 +1970,13 @@ select {
 }
 .hover\:text-gray-500\/75::after {
   content: "";
-  width: 150%;
+  display: block;
+  width: 100%;
   background-color: #fff;
   height: 2px;
-  left: -25%;
-  position: absolute;
-  bottom: -6px;
+  /* left: -25%; */
+  position: relative;
+  bottom: 1px;
   transform: scaleX(0);
   transition: transform 0.2s linear;
 }
