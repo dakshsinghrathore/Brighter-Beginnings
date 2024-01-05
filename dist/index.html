@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap"
       rel="stylesheet"
     />
@@ -18,8 +22,9 @@
     <section
       class="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white font-grotesk overflow-hidden"
     >
-      <header class="bg-transparent backdrop-blur-sm  w-screen fixed">
+ <header class="bg-transparent backdrop-blur-sm  w-screen fixed z-50">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
+
           <div class="flex h-24 items-center justify-between">
             <div class="flex-1 md:flex md:items-center md:gap-12">
               <a class="block text-teal-600" href="index.html">
@@ -41,27 +46,27 @@
             <div class="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" class="hidden md:block">
                 <ul class="flex items-center gap-8 text-lg">
-                  <li>
+                  <li class="p-1 scroll-li">
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      class="text-gray-500 transition hover:text-gray-500/75 custom-color"
                       href="about.html"
                     >
                       About
                     </a>
                   </li>
 
-                  <li>
+                  <li class="p-1 scroll-li">
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      class="text-gray-500 transition hover:text-gray-500/75 custom-color"
                       href="services.html"
                     >
                       Services
                     </a>
                   </li>
 
-                  <li>
+                  <li class="p-1 scroll-li">
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      class="text-gray-500 transition hover:text-gray-500/75 custom-color"
                       href="blog.html"
                     >
                       Blog
@@ -118,14 +123,14 @@
       </header>
       <div
         id="headerDropList"
-        class="w-1/3 sm:w-64 min-w-min h-36 right-8 rounded-xl rounded-tr-none fixed top-14 z-50 border bg-transparent backdrop-blur-sm md:hidden overflow-hidden"
+        class="w-1/3 sm:w-64 min-w-min transition-all rounded-xl rounded-tr-none fixed h-[0] right-[3%] top-[13%] z-50 bg-transparent backdrop-blur-sm block md:hidden overflow-hidden"
       >
         <ul class="h-full flex-col justify-evenly">
           <li
             class="h-1/3 border-0 border-b border-b-gray-700 text-center text-xl hover:text-gray-500/75"
           >
             <a
-              class="text-gray-500 transition h-full w-full flex justify-center items-center"
+              class="text-white transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
               href="about.html"
             >
               About
@@ -134,16 +139,14 @@
           <li
             class="h-1/3 border-0 border-b border-b-gray-700 text-center text-xl hover:text-gray-500/75"
           >
-            <a
-              class="text-gray-500 transition h-full w-full flex justify-center items-center"
+            <a class="text-white transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
               href="services.html"
             >
               Services
             </a>
           </li>
           <li class="h-1/3 text-center text-xl hover:text-gray-500/75">
-            <a
-              class="text-gray-500 transition h-full w-full flex justify-center items-center"
+            <a class="text-white transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
               href="blog.html"
             >
               Blog
@@ -433,8 +436,10 @@
 
         <div class="mt-16 border-t border-gray-100 pt-8">
           <p class="text-center text-xs/relaxed text-gray-500">
+
             © Company <script>document.write(new Date().getFullYear())</script>. All rights reserved. <br>
             background graphic credits- <a href="https://pixabay.com/users/enchantedstudios-722609/" class="text-gray-700 transition hover:text-gray-700/75">EnchantedStudios</a>
+
 
             <br />
 
@@ -451,6 +456,7 @@
       </div>
     </footer>
   </body>
+  <script src="scriptForScrool.js"></script>
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
@@ -509,13 +515,15 @@
     let headerButton = document.querySelector("#headerButton");
     let headerList = document.querySelector("#headerDropList");
 
-    headerList.style.display = "none";
+    window.onresize = () => {headerList.style.height = "0px";headerList.style.borderWidth="0px";};
 
     headerButton.addEventListener("click", function () {
-      if (headerList.style.display === "none") {
-        headerList.style.display = "block";
+      if (headerList.style.height === "0px") {
+        headerList.style.height = "9rem";
+        headerList.style.borderWidth = "1px"
       } else {
-        headerList.style.display = "none";
+        headerList.style.height = "0px";
+        headerList.style.borderWidth = '0px'
       }
     });
 
