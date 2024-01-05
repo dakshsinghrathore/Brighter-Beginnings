@@ -123,14 +123,14 @@
       </header>
       <div
         id="headerDropList"
-        class="w-1/3 sm:w-64 min-w-min h-36 right-8 rounded-xl rounded-tr-none fixed top-14 z-50 border bg-transparent backdrop-blur-sm md:hidden overflow-hidden"
+        class="w-1/3 sm:w-64 min-w-min transition-all rounded-xl rounded-tr-none fixed h-[0] right-[3%] top-[13%] z-50 bg-transparent backdrop-blur-sm block md:hidden overflow-hidden"
       >
         <ul class="h-full flex-col justify-evenly">
           <li
             class="h-1/3 border-0 border-b border-b-gray-700 text-center text-xl hover:text-gray-500/75"
           >
             <a
-              class="text-gray-500 transition h-full w-full flex justify-center items-center"
+              class="text-white transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
               href="about.html"
             >
               About
@@ -139,16 +139,14 @@
           <li
             class="h-1/3 border-0 border-b border-b-gray-700 text-center text-xl hover:text-gray-500/75"
           >
-            <a
-              class="text-gray-500 transition h-full w-full flex justify-center items-center"
+            <a class="text-white transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
               href="services.html"
             >
               Services
             </a>
           </li>
           <li class="h-1/3 text-center text-xl hover:text-gray-500/75">
-            <a
-              class="text-gray-500 transition h-full w-full flex justify-center items-center"
+            <a class="text-white transition hover:text-gray-500/75 h-full w-full flex justify-center items-center"
               href="blog.html"
             >
               Blog
@@ -517,13 +515,15 @@
     let headerButton = document.querySelector("#headerButton");
     let headerList = document.querySelector("#headerDropList");
 
-    headerList.style.display = "none";
+    window.onresize = () => {headerList.style.height = "0px";headerList.style.borderWidth="0px";};
 
     headerButton.addEventListener("click", function () {
-      if (headerList.style.display === "none") {
-        headerList.style.display = "block";
+      if (headerList.style.height === "0px") {
+        headerList.style.height = "9rem";
+        headerList.style.borderWidth = "1px"
       } else {
-        headerList.style.display = "none";
+        headerList.style.height = "0px";
+        headerList.style.borderWidth = '0px'
       }
     });
 
