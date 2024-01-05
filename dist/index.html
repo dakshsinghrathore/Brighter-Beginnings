@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap"
       rel="stylesheet"
     />
@@ -17,7 +21,7 @@
     <section
       class="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white font-grotesk overflow-hidden"
     >
-      <header class="bg-transparent backdrop-blur-sm fixed w-screen">
+      <header class="bg-transparent backdrop-blur-sm fixed w-screen z-50">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-24 items-center justify-between">
             <div class="flex-1 md:flex md:items-center md:gap-12">
@@ -40,27 +44,27 @@
             <div class="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" class="hidden md:block">
                 <ul class="flex items-center gap-8 text-lg">
-                  <li>
+                  <li class="p-1 scroll-li">
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      class="text-gray-500 transition hover:text-gray-500/75 custom-color"
                       href="about.html"
                     >
                       About
                     </a>
                   </li>
 
-                  <li>
+                  <li class="p-1 scroll-li">
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      class="text-gray-500 transition hover:text-gray-500/75 custom-color"
                       href="services.html"
                     >
                       Services
                     </a>
                   </li>
 
-                  <li>
+                  <li class="p-1 scroll-li">
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      class="text-gray-500 transition hover:text-gray-500/75 custom-color"
                       href="blog.html"
                     >
                       Blog
@@ -429,7 +433,11 @@
 
         <div class="mt-16 border-t border-gray-100 pt-8">
           <p class="text-center text-xs/relaxed text-gray-500">
-            © Company <script>document.write(new Date().getFullYear())</script>. All rights reserved.
+            © Company
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            . All rights reserved.
 
             <br />
 
@@ -446,6 +454,7 @@
       </div>
     </footer>
   </body>
+  <script src="scriptForScrool.js"></script>
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
