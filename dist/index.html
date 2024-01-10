@@ -515,16 +515,29 @@
 
     let headerButton = document.querySelector("#headerButton");
     let headerList = document.querySelector("#headerDropList");
+    let headerOpen = false;
 
-    window.onresize = () => {headerList.style.height = "0px";headerList.style.borderWidth="0px";};
+    function openHeader() {
+      headerList.style.height = "9rem";
+      headerList.style.borderWidth = "1px"
+      headerOpen = true;
+    }
+
+    function closeHeader() {
+      headerList.style.height = "0px";
+      headerList.style.borderWidth = "0px";
+      headerOpen = false;
+    }
+
+    window.onresize = () => {
+      closeHeader();
+    };
 
     headerButton.addEventListener("click", function () {
-      if (headerList.style.height === "0px") {
-        headerList.style.height = "9rem";
-        headerList.style.borderWidth = "1px"
+      if (headerOpen) {
+        closeHeader();
       } else {
-        headerList.style.height = "0px";
-        headerList.style.borderWidth = '0px'
+        openHeader();
       }
     });
 
