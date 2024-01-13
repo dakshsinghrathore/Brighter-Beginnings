@@ -1295,6 +1295,7 @@ select{
   border-bottom-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
+
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1348,6 +1349,8 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+
+
 
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -1948,6 +1951,7 @@ select{
   text-underline-offset: 4px;
 }
 
+
 :is([dir="rtl"] .rtl\:rotate-180){
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2449,4 +2453,51 @@ select{
   .xl\:col-span-6{
     grid-column: span 6 / span 6;
   }
+}
+
+.menu-link {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.menu-link:hover,
+.menu-link:focus,
+.menu-link:active {
+  color: #0D9488; /* Replace with your actual theme color */
+  border-bottom-color: #0D9488; /* Replace with your actual theme color */
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust thickness as needed */
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.menu-link:hover::after,
+.menu-link:focus::after,
+.menu-link:active::after {
+  background-color: #0D9488; /* Replace with your actual theme color */
+}
+
+.hover\:bg-theme:hover{
+  background-color: #0D9488;
+}
+.bg-theme{
+  background-color: #0D9488;
+}
+.boder-theme{
+  border-color: #0D9488;
+}
+.text-theme{
+  color: #0D9488;
+}
+.hover\:text-theme:hover{
+  --tw-text-opacity: 1;
+  color: #0D9488;
 }
