@@ -2220,6 +2220,17 @@ select{
   }
 }
 
+.dropdown{
+  width: 100px;
+  position: absolute;
+  top:100%;
+  right: 10%;
+  background-color: white;
+  color: #000;
+  border-radius: 10px;
+  height:150px;
+}
+
 @media (min-width: 1024px){
   .lg\:order-last{
     order: 9999;
