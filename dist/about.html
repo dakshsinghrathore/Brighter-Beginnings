@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-
-    </style>
-
+   
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+  
+      </style>
+      <link rel="stylesheet" href="../src/input.css">
+  
 <body class="bg-black">
   <section
   class="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white font-grotesk overflow-hidden"
 >
-  <header class="bg-transparent backdrop-blur-sm  w-screen fixed">
+  <header class="bg-gradient-to-r z-10 from-gray-700 via-gray-900 to-black w-screen fixed">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
       <div class="flex h-24 items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-12">
@@ -114,9 +116,11 @@
       </div>
     </div>
   </header>
-  <div
+  <div 
+    
+  
     id="headerDropList"
-    class="w-1/3 sm:w-64 min-w-min h-36 right-8 rounded-xl rounded-tr-none fixed top-14 z-50 border bg-transparent backdrop-blur-sm md:hidden overflow-hidden"
+    class="w-1/3 sm:w-64 min-w-min transition-all rounded-xl rounded-tr-none fixed h-[0] right-[3%] top-[13%] z-50 bg-gradient-to-r from-gray-700 via-gray-900 to-black backdrop-blur-sm block md:hidden overflow-hidden"
   >
     <ul class="h-full flex-col justify-evenly">
       <li
@@ -149,10 +153,10 @@
     </ul>
   </div>
 
-  <div class="py-32 max-w-[1080px] mx-auto mt-10  flex h-screen items-center">
-    <div class="bg-white text-black flex  border  rounded-lg justify-center gap-16 py-10 " >
-      <div class=" h-[22rem] m-3 w-2/4 ">
-     <h1 class="text-2xl font-bold font-serif mb-4" >About Us</h1>
+  <div class="md:py-32  p-4 max-w-[1080px] mx-auto  mt-20  flex md:h-screen items-center sm:gap-64 gap-10 pb-10 font-grotesk text-[15px]">
+    <div class="bg-white text-black flex flex-col p-4    md:flex-row  border  rounded-lg justify-center sm:gap-16  gap-10 sm:py-10 " >
+      <div class=" md:h-[22rem] h-full m-3 md:w-2/4 ">
+     <h1 class="text-2xl font-extrabold font-grotesk mb-4" >About Us</h1>
      <p>Welcome to brighter-beginnings, where innovation meets excellence! We are a cutting-edge technology solutions provider, dedicated to transforming your digital dreams into reality. Explore the endless possibilities with our diverse range of services:
       <br>
       At Brighter-Beginnings, we are more than just service providers; we are your partners in success. Our dedicated team of professionals is committed to delivering solutions that not only meet but exceed your expectations. Join us on a journey of innovation, where your ideas come to life.
@@ -161,7 +165,7 @@
       
       Ready to embark on a digital transformation journey? Contact us today and let's build something extraordinary together!</p>
     </div>
-    <div class="bg-blue-500 h- text-white   border  rounded-lg  w-1/4  "    >
+    <div class="bg-blue-500 h- text-white   border  rounded-lg  md:w-1/4  "    >
             <div class="mx-9 my-5">
               <h5 class="text-sm font-light">Organisation:
               </h5>
@@ -184,7 +188,7 @@
   </div>
   </div>
 </section>
-<footer class="bg-gray-300">
+<footer class="bg-gray-300 ">
   <div class="w-screen px-4 pb-8 pt-16 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-md">
       <strong
@@ -193,7 +197,7 @@
         Want us to email you with the latest module updates?
       </strong>
 
-      <form class="mt-6">
+      <form class="mt-6 -z-10">
         <div class="relative max-w-lg">
           <label class="sr-only" for="email"> Email </label>
 
@@ -445,4 +449,35 @@
   </div>
 </footer>
 </body>
+<script>
+ 
+ let headerButton = document.querySelector("#headerButton");
+    let headerList = document.querySelector("#headerDropList");
+    let headerOpen = false;
+
+    function openHeader() {
+      headerList.style.height = "9rem";
+      headerList.style.borderWidth = "1px"
+      headerOpen = true;
+    }
+
+    function closeHeader() {
+      headerList.style.height = "0px";
+      headerList.style.borderWidth = "0px";
+      headerOpen = false;
+    }
+
+    window.onresize = () => {
+      closeHeader();
+    };
+
+    headerButton.addEventListener("click", function () {
+      if (headerOpen) {
+        closeHeader();
+      } else {
+        openHeader();
+      }
+    });
+
+</script>
 </html>
