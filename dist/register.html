@@ -153,7 +153,7 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
   
               <p class="mt-4 text-sm text-white sm:mt-0">
                 Already have an account?
-                <a href="#" class="underline">Log in</a>.
+                <a id="login" class="underline">Log in</a>.
               </p>
             </div>
           </form>
@@ -163,4 +163,91 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
   </section>
 
 </body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithRedirect,
+    getRedirectResult,
+  } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCfnpTXcMkA3_gwaNaZBaqmf3uDXp5vGdQ",
+    authDomain: "brighter-beginnings.firebaseapp.com",
+    projectId: "brighter-beginnings",
+    storageBucket: "brighter-beginnings.appspot.com",
+    messagingSenderId: "395044809359",
+    appId: "1:395044809359:web:72485b8354a581c9b0defa",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const analytics = getAnalytics(app);
+  const provider = new GoogleAuthProvider(app);
+
+  document.getElementById("login").addEventListener("click", (e) => {
+    signInWithRedirect(auth, provider);
+  });
+
+  getRedirectResult(auth)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access Google APIs.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+
+      // The signed-in user info.
+      const user = result.user;
+
+      // Redirect to a specific HTML page after successful login
+      window.location.href = "getstarted.html";
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+    });
+
+  // header drop list toggle
+
+  let headerButton = document.querySelector("#headerButton");
+  let headerList = document.querySelector("#headerDropList");
+  let headerOpen = false;
+
+  function openHeader() {
+    headerList.style.height = "9rem";
+    headerList.style.borderWidth = "1px"
+    headerOpen = true;
+    
+  }
+
+  function closeHeader() {
+    headerList.style.height = "0px";
+    headerList.style.borderWidth = "0px";
+    headerOpen = false;
+  }
+
+  window.onresize = () => {
+    closeHeader();
+  };
+
+  headerButton.addEventListener("click", function () {
+    if (headerOpen) {
+      closeHeader();
+    } else {
+      openHeader();
+    }
+  });
+
+  
+</script>
 </html>
