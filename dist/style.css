@@ -2219,16 +2219,19 @@ select{
     line-height: 1.75rem;
   }
 }
-
-.dropdown{
+.w-24{
   width: 100px;
   position: absolute;
   top:100%;
   right: 10%;
-  background-color: white;
-  color: #000;
-  border-radius: 10px;
-  height:150px;
+}
+
+
+@media (max-width:1280px) {
+  .w-24{
+    position: absolute;
+    right: 8px;
+  }
 }
 
 @media (min-width: 1024px){
