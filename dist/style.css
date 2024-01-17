@@ -2248,6 +2248,20 @@ select{
     line-height: 1.75rem;
   }
 }
+.w-24{
+  width: 100px;
+  position: absolute;
+  top:100%;
+  right: 10%;
+}
+
+
+@media (max-width:1280px) {
+  .w-24{
+    position: absolute;
+    right: 8px;
+  }
+}
 
 @media (min-width: 1024px){
   .lg\:col-span-7{
