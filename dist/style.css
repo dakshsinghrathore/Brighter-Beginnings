@@ -9,6 +9,25 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+  /* Add hover effect for the anchor tags inside the problem-solving, development, and logic sections */
+  .group:hover img {
+    transform: scale(1.1); /* Increase image scale on hover */
+    filter: brightness(70%); /* Decrease brightness on hover */
+  }
+
+  /* Style for the text inside the anchor tags on hover */
+  .group:hover h3 {
+    text-decoration: underline;
+    text-decoration-color: #fff; /* Change text underline color on hover */
+    text-underline-offset: 4px;
+  }
+
+  /* Add smooth transition effect for a better hover experience */
+  .group img, .group h3 {
+    transition: transform 0.3s, filter 0.3s, text-decoration 0.3s;
+  }
+  
+
 *,
 ::before,
 ::after {
