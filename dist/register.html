@@ -6,14 +6,15 @@
     <title>Registration</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body class="bg-cover bg-center bg-no-repeat" style="background-image: 
-url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); height: 100vh;">
+<body class="bg-cover bg-center bg-no-repeat h-full" style="background-image: 
+url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); height: 100%;">
 
   
   <section class=" font-grotesk  bg-white ">
     <div class="lg:grid lg:min-h-screen">
-        <div class="flex items-center justify-center  px-8 py-8 sm:px-12 mx-auto lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 rounded-3xl">
+        <div class="flex items-center justify-center  px-8 py-0 sm:px-12 mx-auto lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 rounded-3xl">
             <div class="max-w-xl lg:max-w-3xl">
           <a class="block text-blue-600" href="/">
             <span class="sr-only">Home</span>
@@ -54,7 +55,8 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
             id="FirstName"
            name="first_name"
            class="mt-1 w-full rounded-md border-gray-200  text-sm text-white bg-white shadow-sm  focus:border-white"
-/>
+/><div id="FirstNameValidation" style="color: red;display: none;">This is a required field.</div>
+
             </div>
   
             <div class="col-span-6 sm:col-span-3">
@@ -71,19 +73,21 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
                 name="last_name"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-white shadow-sm"
               />
+              <div id="LastNameValidation" style="color: red;display: none;">This is a required field.</div>
             </div>
   
             <div class="col-span-6">
               <label for="Email" class="block text-sm font-medium text-white">
                 Email
               </label>
-  
+               
               <input
                 type="email"
                 id="Email"
                 name="email"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-white shadow-sm"
               />
+              <div id="EmailValidation" style="color: red;display: none;">This is a required field.</div>
             </div>
   
             <div class="col-span-6 sm:col-span-3">
@@ -93,13 +97,18 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
               >
                 Password
               </label>
-  
+              <div class="password-container">
               <input
                 type="password"
                 id="Password"
                 name="password"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-white shadow-sm"
               />
+              <span id="togglePassword" class="togglePasswordFields" >
+                <i class="fas fa-eye" id="eyeIcon" style="color:white"></i>
+              </span>
+            </div>
+              <div id="PasswordValidation" style="color: red;display: none;">This is a required field.</div>
             </div>
   
             <div class="col-span-6 sm:col-span-3">
@@ -109,13 +118,18 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
               >
                 Password Confirmation
               </label>
-  
+               <div class="password-container">
               <input
                 type="password"
                 id="PasswordConfirmation"
                 name="password_confirmation"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-white shadow-sm"
               />
+              <span id="toggleConfirmPassword" class="togglePasswordFields">
+                <i class="fas fa-eye" id="ConfirmPasswordEyeIcon" style="color:white"></i>
+              </span>
+            </div>
+              <div id="ConfirmPasswordValidation" style="color: red;display: none;">This is a required field.</div>
             </div>
   
             <div class="col-span-6">
@@ -143,11 +157,12 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
                 <a href="#" class="text-white underline">privacy policy</a>.
               </p>
             </div>
+            <div class="col-span-6" id="ErrorBox" style="color: red;display: none;">This is a required field.</div>
   
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <button
               class="relative rounded-2xl bg-blue-600 py-2 px-5 font-medium text-white transition-all transform hover: hover:scale-105 focus:ring "
-              >
+              id="registrationButton">
                 Create an account
               </button>
   
@@ -162,8 +177,10 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
     </div>
   </section>
 
+
 </body>
 
+</html>
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
@@ -174,6 +191,100 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
     signInWithRedirect,
     getRedirectResult,
   } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+//input fields 
+const firstnameElement=document.querySelector("#FirstName");
+    const lastnameElement=document.querySelector("#LastName");
+    const emailElement=document.querySelector("#Email");
+    const passwordElement=document.querySelector("#Password");
+    const confirmpasswordElement=document.querySelector("#PasswordConfirmation");
+
+  //password visibility toggle
+  
+    document.getElementById("togglePassword").addEventListener("click",()=>{
+      const eyeIcon = document.getElementById("eyeIcon");
+
+if (passwordElement.type === "password") {
+  passwordElement.type = "text";
+  eyeIcon.classList.remove("fa-eye");
+  eyeIcon.classList.add("fa-eye-slash");
+} else {
+  passwordElement.type = "password";
+  eyeIcon.classList.remove("fa-eye-slash");
+  eyeIcon.classList.add("fa-eye");
+}
+    })
+     //confirm password visibility toggle
+  
+     document.getElementById("toggleConfirmPassword").addEventListener("click",()=>{
+      const eyeIcon = document.getElementById("ConfirmPasswordEyeIcon");
+
+if (confirmpasswordElement.type === "password") {
+  confirmpasswordElement.type = "text";
+  eyeIcon.classList.remove("fa-eye");
+  eyeIcon.classList.add("fa-eye-slash");
+} else {
+  confirmpasswordElement.type = "password";
+  eyeIcon.classList.remove("fa-eye-slash");
+  eyeIcon.classList.add("fa-eye");
+}
+    })
+
+  const handleRegistrationBtn=(e)=>{
+    let valid=true;
+    let validpassword=true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    e.preventDefault();
+    const firstname=document.querySelector("#FirstName").value;
+    const lastname=document.querySelector("#LastName").value;
+    const email=document.querySelector("#Email").value;
+    const password=document.querySelector("#Password").value;
+    const confirmpassword=document.querySelector("#PasswordConfirmation").value;
+    if(firstname.length>0)document.querySelector("#FirstNameValidation").style.display = 'none';
+    if(lastname.length>0)document.querySelector("#LastNameValidation").style.display = 'none';
+    if(email.length>0)document.querySelector("#EmailValidation").style.display = 'none';
+    if(password.length>0)document.querySelector("#PasswordValidation").style.display = 'none';
+    if(confirmpassword.length>0)document.querySelector("#ConfirmPasswordValidation").style.display = 'none';
+    if(valid) document.getElementById("ErrorBox").style.display = 'none'; 
+   
+    if(!firstname){
+      document.getElementById("FirstNameValidation").style.display = 'block'; 
+     valid=false;
+    }if(!lastname){
+      document.getElementById("LastNameValidation").style.display = 'block'; 
+      valid=false;
+    }if(!email){
+      document.getElementById("EmailValidation").innerHTML="This is a required field"
+      document.getElementById("EmailValidation").style.display = 'block'; 
+      valid=false;
+    }if(!emailRegex.test(email) && email.length>0){
+      document.getElementById("EmailValidation").innerHTML="Please enter valid email"
+      document.getElementById("EmailValidation").style.display = 'block'; 
+      valid=false;
+    }if(!password){
+      document.getElementById("PasswordValidation").style.display = 'block'; 
+      valid=false;
+    }if(!confirmpassword){
+      document.getElementById("ConfirmPasswordValidation").style.display = 'block'; 
+      valid=false;
+    }if(password!==confirmpassword){
+      document.getElementById("ErrorBox").innerHTML="Both the passwords are not matching"
+
+      document.getElementById("ErrorBox").style.display = 'block'; 
+      valid=false;
+      validpassword=false;
+    }if(!passwordRegex.test(password)  && validpassword && password.length>0 && confirmpassword.length>0){
+      document.getElementById("ErrorBox").innerHTML="Password must be at least 8 characters long and contain at least one number, one letter, and one special character."
+      document.getElementById("ErrorBox").style.display = 'block'; 
+      valid=false;
+    }if(valid){
+//backend logic for implementing the register 
+    }
+
+
+  }
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -224,30 +335,32 @@ url('https://images.unsplash.com/photo-1512152751702-ac8edb10d63b?q=80&w=2070&au
   let headerOpen = false;
 
   function openHeader() {
-    headerList.style.height = "9rem";
-    headerList.style.borderWidth = "1px"
-    headerOpen = true;
-    
+    if(headerList) {
+  headerList.style.height = "9rem";
+  headerList.style.borderWidth = "1px";
+  headerOpen = true;
+} 
   }
 
   function closeHeader() {
+    if (headerList) {
     headerList.style.height = "0px";
     headerList.style.borderWidth = "0px";
     headerOpen = false;
+    }
   }
 
   window.onresize = () => {
     closeHeader();
   };
 
-  headerButton.addEventListener("click", function () {
+  headerButton?.addEventListener("click", function () {
     if (headerOpen) {
       closeHeader();
     } else {
       openHeader();
     }
   });
-
+  document.getElementById("registrationButton").addEventListener("click", handleRegistrationBtn);
   
 </script>
-</html>
