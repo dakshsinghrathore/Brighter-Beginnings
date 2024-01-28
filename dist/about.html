@@ -13,7 +13,21 @@
     href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&family=Space+Grotesk&display=swap"
     rel="stylesheet"
   />
+
   <body class="bg-black">
+    <!--Modal---->
+    <div
+      id="overlay"
+      class="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 opacity-50 hidden"
+    ></div>
+
+    <div
+      id="newsletterModal"
+      class="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-3/4 rounded-md w-72 bg-blue-500 text-white p-4 text-center hidden"
+    >
+      <p>You've subscribed to our Newsletter!</p>
+    </div>
+    <!--Modal ended-->
     <section
       class="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white font-grotesk overflow-hidden"
     >
@@ -157,7 +171,7 @@
         class="md:py-32 p-4 max-w-[1080px] mx-auto mt-20 flex md:h-screen items-center sm:gap-64 gap-10 pb-10 font-grotesk text-[15px]"
       >
         <div
-          class="bg-white text-black flex flex-col p-4 md:flex-row border rounded-lg justify-center sm:gap-16 gap-10 sm:py-10"
+          class="bg-gray-300 text-black flex flex-col p-4 md:flex-row border rounded-lg justify-center sm:gap-16 gap-10 sm:py-10"
         >
           <div class="md:h-[22rem] h-full m-3 md:w-2/4">
             <h1 class="text-2xl font-extrabold font-grotesk mb-4">About Us</h1>
@@ -222,9 +236,17 @@
 
               <button
                 class="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+                id="subscribeBtn"
               >
                 Subscribe
               </button>
+            </div>
+            <div
+              style="color: red; display: none"
+              class="p-2"
+              id="emailValidation"
+            >
+              This is a required field
             </div>
           </form>
         </div>
@@ -473,6 +495,7 @@
   <script>
     let headerButton = document.querySelector("#headerButton");
     let headerList = document.querySelector("#headerDropList");
+    let subscribeBtn = document.querySelector("#subscribeBtn");
     let headerOpen = false;
 
     function openHeader() {
@@ -496,6 +519,39 @@
         closeHeader();
       } else {
         openHeader();
+      }
+    });
+    subscribeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let emailValidation = document.querySelector("#emailValidation");
+      emailValidation.style.display = "none";
+      const email = document.querySelector("#email").value;
+      if (!email) {
+        emailValidation.innerHTML = "This is a required field";
+        emailValidation.style.display = "block";
+      } else if (!emailRegex.test(email)) {
+        emailValidation.innerHTML = "Enter a valid email address";
+        emailValidation.style.display = "block";
+      } else {
+        document.querySelector("#email").value = "";
+        // Show the modal
+        var overlay = document.getElementById("overlay");
+        var newsletterModal = document.getElementById("newsletterModal");
+
+        overlay.style.display = "block";
+        newsletterModal.style.display = "block";
+        overlay.addEventListener("click", function () {
+          newsletterModal.style.display = "none";
+
+          overlay.style.display = "none";
+        });
+
+        // Close the overlay and modal after 3 seconds
+        setTimeout(function () {
+          overlay.style.display = "none";
+          newsletterModal.style.display = "none";
+        }, 3000);
       }
     });
   </script>
