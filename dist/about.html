@@ -16,8 +16,10 @@
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&family=Space+Grotesk&display=swap"
   rel="stylesheet">
+
 
 <body class="bg-black overflow-x-hidden">
   <!--Modal---->
@@ -120,9 +122,9 @@
     </div>
 
     <div
-      class="md:py-32  p-4 max-w-[1080px] mx-auto  mt-20  flex md:h-screen items-center sm:gap-64 gap-10 pb-10 font-grotesk text-[15px]">
-      <div
-        class="bg-gray-300 text-black flex flex-col p-4    md:flex-row  border  rounded-lg justify-center sm:gap-16  gap-10 sm:py-10 ">
+      class="md:py-32  p-4 max-w-[1080px] mx-auto  mt-20  flex md:h-screen items-center sm:gap-64 gap-10 pb-10 font-grotesk text-[15px]" >
+      <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+        class="bg-gray-300 text-black flex flex-col p-4    md:flex-row  border  rounded-lg justify-center sm:gap-16  gap-10 sm:py-10 " >
         <div class=" md:h-[22rem] h-full m-3 md:w-2/4 ">
           <h1 class="text-2xl font-extrabold font-grotesk mb-4">About Us</h1>
           <p>Welcome to brighter-beginnings, where innovation meets excellence! We are a cutting-edge technology
@@ -408,5 +410,9 @@
 
 
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </html>
