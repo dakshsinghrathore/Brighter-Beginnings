@@ -47,7 +47,7 @@ npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch
 ```
 
 <div align=center>
-  <h2>This Project is the part of</h2>
+  <h2>This Project was part of</h2>
   <!-- <img alt="hacktoberfest" src="https://raw.githubusercontent.com/GirlScriptSummerOfCode/MentorshipProgram/master/GSsoc%20Type%20Logo%20Black.png#gh-light-mode-only" width=87%> -->
   <!-- <img alt="hacktoberfest" src="https://github.com/dakshsinghrathore/ISRO-web/assets/115932772/7bf7edc1-eeee-4e55-82fe-5f756ef7d11c#gh-dark-mode-only"/> -->
   <img alt="SWOC23" src="https://github.com/dakshsinghrathore/Brighter-Beginnings/assets/115932772/708c764d-05a7-4e33-bf89-114306f35d8c"/>
