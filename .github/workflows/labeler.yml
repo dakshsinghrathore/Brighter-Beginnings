@@ -16,35 +16,45 @@ jobs:
         run: |
           # Extract issue title and body
           # Custom logic for label classification
-          if echo "${TITLE}" | grep -iE "bug|error|issue|fix"; then
+          if echo "${TITLE}" | grep -qiE "bug|error|issue|fix|"; then
             echo "Adding **'bug'** label..."
             gh issue edit "${NUMBER}" --add-label "bug"
-          elif echo "${TITLE}" | grep -iE "chore|maintenance|cleanup|refactor"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "chore|maintenance|cleanup|refactor"; then
             echo "Adding **'chore'** label..."
             gh issue edit "${NUMBER}" --add-label "chore"
-          elif echo "${TITLE}" | grep -iE "documentation|docs|typo"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "documentation|docs|typo"; then
             echo "Adding **'documentation'** label..."
             gh issue edit "${NUMBER}" --add-label "documentation"
-          elif echo "${TITLE}" | grep -iE "duplicate|identical|matching"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "duplicate"; then
             echo "Adding **'duplicate'** label..."
             gh issue edit "${NUMBER}" --add-label "duplicate"
-          elif echo "${TITLE}" | grep -iE "enhancement|feature|feat|property|attribute"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "enhancement|feature|feat|property|attribute"; then
             echo "Adding **'enhancement'** label..."
             gh issue edit "${NUMBER}" --add-label "enhancement"
-          elif echo "${TITLE}" | grep -iE "help wanted"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "good first issue"; then
+            echo "Adding **'good first issue'** label..."
+            gh issue edit "${NUMBER}" --add-label "good first issue"
+          fi
+          if echo "${TITLE}" | grep -qiE "help wanted"; then
             echo "Adding **'help wanted'** label..."
             gh issue edit "${NUMBER}" --add-label "help wanted"
-          elif echo "${TITLE}" | grep -iE "invalid"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "invalid"; then
             echo "Adding **'invalid'** label..."
             gh issue edit "${NUMBER}" --add-label "invalid"
-          elif echo "${TITLE}" | grep -iE "question"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "question"; then
             echo "Adding **'question'** label..."
             gh issue edit "${NUMBER}" --add-label "question"
-          elif echo "${TITLE}" | grep -iE "wontfix|won't fix"; then
+          fi
+          if echo "${TITLE}" | grep -qiE "wontfix|won't fix"; then
             echo "Adding **'wontfix'** label..."
             gh issue edit "${NUMBER}" --add-label "wontfix"
-          else
-            echo "No specific label found."
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
