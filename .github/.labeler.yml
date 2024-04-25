@@ -1,0 +1,4 @@
+projects addition:
+  - 'DB/*'
+wait for reviewers:
+  - '**/*'
