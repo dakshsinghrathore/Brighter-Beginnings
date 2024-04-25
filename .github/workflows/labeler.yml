@@ -1,18 +1,57 @@
-name: Label issues
+name: Label Issues
+
 on:
   issues:
     types:
       - reopened
       - opened
+
 jobs:
   label_issues:
     runs-on: ubuntu-latest
     permissions:
       issues: write
     steps:
-      - run: gh issue edit "$NUMBER" --add-label "$LABELS"
+      - name: Check Issue Type
+        run: |
+          # Extract issue title and body
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          ISSUE_BODY="${{ github.event.issue.body }}"
+
+          # Custom logic for label classification
+          if echo "$ISSUE_TITLE" | grep -iE "bug|error|issue"; then
+            echo "Adding **'bug'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "bug"
+          elif echo "$ISSUE_TITLE" | grep -iE "chore|maintenance|cleanup"; then
+            echo "Adding **'chore'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "chore"
+          elif echo "$ISSUE_TITLE" | grep -iE "documentation|docs"; then
+            echo "Adding **'documentation'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "documentation"
+          elif echo "$ISSUE_TITLE" | grep -iE "duplicate"; then
+            echo "Adding **'duplicate'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "duplicate"
+          elif echo "$ISSUE_TITLE" | grep -iE "enhancement|feature"; then
+            echo "Adding **'enhancement'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "enhancement"
+          elif echo "$ISSUE_TITLE" | grep -iE "good first issue"; then
+            echo "Adding **'good first issue'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "good first issue"
+          elif echo "$ISSUE_TITLE" | grep -iE "help wanted"; then
+            echo "Adding **'help wanted'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "help wanted"
+          elif echo "$ISSUE_TITLE" | grep -iE "invalid"; then
+            echo "Adding **'invalid'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "invalid"
+          elif echo "$ISSUE_TITLE" | grep -iE "question"; then
+            echo "Adding **'question'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "question"
+          elif echo "$ISSUE_TITLE" | grep -iE "wontfix|won't fix"; then
+            echo "Adding **'wontfix'** label..."
+            gh issue edit "${{ github.event.issue.number }}" --add-label "wontfix"
+          else
+            echo "No specific label found."
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
-          LABELS: dependencies,easy,medium,hard,bug,enhancement,SWOC S4
