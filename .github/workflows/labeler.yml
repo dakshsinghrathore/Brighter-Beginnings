@@ -16,24 +16,21 @@ jobs:
         run: |
           # Extract issue title and body
           # Custom logic for label classification
-          if echo "${TITLE}" | grep -iE "bug|error|issue"; then
+          if echo "${TITLE}" | grep -iE "bug|error|issue|fix"; then
             echo "Adding **'bug'** label..."
             gh issue edit "${NUMBER}" --add-label "bug"
-          elif echo "${TITLE}" | grep -iE "chore|maintenance|cleanup"; then
+          elif echo "${TITLE}" | grep -iE "chore|maintenance|cleanup|refactor"; then
             echo "Adding **'chore'** label..."
             gh issue edit "${NUMBER}" --add-label "chore"
-          elif echo "${TITLE}" | grep -iE "documentation|docs"; then
+          elif echo "${TITLE}" | grep -iE "documentation|docs|typo"; then
             echo "Adding **'documentation'** label..."
             gh issue edit "${NUMBER}" --add-label "documentation"
-          elif echo "${TITLE}" | grep -iE "duplicate"; then
+          elif echo "${TITLE}" | grep -iE "duplicate|identical|matching"; then
             echo "Adding **'duplicate'** label..."
             gh issue edit "${NUMBER}" --add-label "duplicate"
-          elif echo "${TITLE}" | grep -iE "enhancement|feature"; then
+          elif echo "${TITLE}" | grep -iE "enhancement|feature|feat|property|attribute"; then
             echo "Adding **'enhancement'** label..."
             gh issue edit "${NUMBER}" --add-label "enhancement"
-          elif echo "${TITLE}" | grep -iE "good first issue"; then
-            echo "Adding **'good first issue'** label..."
-            gh issue edit "${NUMBER}" --add-label "good first issue"
           elif echo "${TITLE}" | grep -iE "help wanted"; then
             echo "Adding **'help wanted'** label..."
             gh issue edit "${NUMBER}" --add-label "help wanted"
