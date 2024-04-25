@@ -15,9 +15,6 @@ jobs:
       - name: Check Issue Type
         run: |
           # Extract issue title and body
-          ISSUE_TITLE="${{ github.event.issue.title }}"
-          ISSUE_BODY="${{ github.event.issue.body }}"
-
           # Custom logic for label classification
           if echo "$ISSUE_TITLE" | grep -iE "bug|error|issue"; then
             echo "Adding **'bug'** label..."
@@ -55,3 +52,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+          GH_REPO: ${{ github.repository }}
