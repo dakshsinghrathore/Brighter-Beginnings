@@ -10,7 +10,7 @@
     "start": "vite"
   },
   "dependencies": {
-    "node": "^22.1.0",
+    "node": "^22.4.1",
     "vite": "^5.3.1"
   }
 }
